@@ -3,7 +3,7 @@ import numpy as np
 import streamlit as st
 
 # Load the trained model
-with open('random_forest_model.sav', 'rb') as model_file:
+with open('SVC_model.sav', 'rb') as model_file:
     diabetes_model = pickle.load(model_file)
 
 # Title of the web app
