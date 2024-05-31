@@ -35,14 +35,13 @@ diabetes_diagnosis = ''
 # Button for prediction
 if st.button('Prediksi'):
     try:
-        if Glucose is None or BMI is None:
-            raise ValueError("Masukkan nilai untuk kedua input.")
+        # Check if inputs are numeric
+        if not isinstance(Glucose, (int, float)) or not isinstance(BMI, (int, float)):
+            raise ValueError("Pastikan semua input adalah angka.")
 
-        # Convert input to numeric type
-        Glucose_float = float(Glucose)
-        BMI_float = float(BMI)
-        data_input = np.array([[Glucose_float, BMI_float]])
-        
+        # Create input array for the model
+        data_input = np.array([[Glucose, BMI]])
+
         # Prediction using the model
         diabetes_prediction = diabetes_model.predict(data_input)
         st.write(f"Model prediction: {diabetes_prediction}")  # Debugging line
@@ -53,7 +52,7 @@ if st.button('Prediksi'):
             color = 'green'
         else:
             diabetes_diagnosis = 'Pasien Terkena Diabetes'
-            color = 'red'
+            color = 'ed'
 
         # Display prediction with appropriate background color
         st.markdown(
