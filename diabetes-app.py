@@ -10,7 +10,7 @@ st.title('Sistem Prediksi Penyakit Diabetes')
 
 # Deskripsi web
 st.write("""
-Aplikasi ini berbasis Machine Learning dengan menggunakan model ensemble yang telah dilatih pada kumpulan data diabetes. Aplikasi ini dapat memprediksi apakah seseorang terkena diabetes atau tidak, berdasarkan nilai **Glucose, BMI, dan Usia**.
+Aplikasi ini berbasis Machine Learning dengan menggunakan model ensemble yang telah dilatih pada kumpulan data diabetes. Aplikasi ini dapat memprediksi apakah seseorang terkena diabetes atau tidak, berdasarkan nilai **Glucose dan BMI**.
 
 **Cara menggunakan aplikasi:**
 
