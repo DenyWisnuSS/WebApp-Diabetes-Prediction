@@ -3,7 +3,7 @@ import streamlit as st
 import numpy as np
 
 # Membaca model
-diabetes_model = pickle.load(open('ensemble_model.sav', 'rb'))
+diabetes_model = pickle.load(open('decision_tree.sav', 'rb'))
 
 # Judul web
 st.title('Sistem Prediksi Penyakit Diabetes')
@@ -14,22 +14,19 @@ Aplikasi ini berbasis Machine Learning dengan menggunakan model ensemble yang te
 
 **Cara menggunakan aplikasi:**
 
-1. Masukkan nilai Glucose, BMI, dan usia Anda.
+1. Masukkan nilai Glucose dan BMI Anda.
 2. Klik tombol "Prediksi".
 3. Aplikasi akan menampilkan hasil prediksi, apakah Anda terkena diabetes atau tidak.
 """)
 # Input untuk nilai-nilai variabel
 # Membagi kolom
-col1, col2, col3 = st.columns(3)
+col1, col2 = st.columns(2)
 
 with col1:
     Glucose = st.number_input('Input nilai Glucose (mg/dL)', value=None, key='Glucose')
 
 with col2:
     BMI = st.number_input('Input nilai BMI (kg/m^2)', value=None, key='BMI')
-
-with col3:
-    Age = st.number_input('Input nilai Usia/Umur (tahun)', value=None, key='Age', step=1)
 
 # Code untuk prediksi
 diabetes_diagnosis = ''
@@ -38,7 +35,7 @@ diabetes_diagnosis = ''
 if st.button('Prediksi'):
     try:
         # Mengonversi input ke tipe numerik
-        data_input = np.array([[Glucose, BMI, int(Age)]])
+        data_input = np.array([[Glucose, BMI]])
 
         # Prediksi menggunakan model
         diabetes_prediction = diabetes_model.predict(data_input)
