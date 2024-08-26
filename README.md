@@ -25,9 +25,9 @@ To run this application locally, follow these steps:
    streamlit run app.py
 
 ## Project Structure
-'''bash
-├── app.py                   # Main application file
-├── SVC_model.sav            # Pre-trained machine learning model
-├── requirements.txt         # Required Python packages
-├── README.md                # Project documentation
-└── data
+
+- app.py                   # Main application file
+- SVC_model.sav            # Pre-trained machine learning model
+- requirements.txt         # Required Python packages
+- README.md                # Project documentation
+- data
