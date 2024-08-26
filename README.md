@@ -16,16 +16,20 @@ To run this application locally, follow these steps:
    ```bash
    git clone https://github.com/DenyWisnuSS/WebApp-Diabetes-Prediction.git
 
-2. **Navigate to the project directory**
+2. **Navigate to the project directory**:
+   ```bash
    cd WebApp-Diabetes-Prediction
 
-3. **Install the required dependencies**
+3. **Install the required dependencies**:
+   ```bash
    pip install -r requirements.txt
-4. **Run the streamlit app**
+
+4. **Run the streamlit app**:
+   ```bash
    streamlit run app.py
 
 ## Project Structure
-
+```bash
 - app.py                   # Main application file
 - SVC_model.sav            # Pre-trained machine learning model
 - requirements.txt         # Required Python packages
